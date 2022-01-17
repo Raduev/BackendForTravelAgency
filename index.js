@@ -7,6 +7,7 @@ require("dotenv").config()
 
 app.use(cors())
 app.use(express.json())
+app.use("/images". express.images(path.resolve(__dirname, "images")))
 app.use(require("./routes/index"))
 
 const connect = async () => {
