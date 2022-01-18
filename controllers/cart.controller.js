@@ -47,7 +47,7 @@ module.exports.cartController = {
       if (type !== "Bearer") {
         return res.status(400).json("Неверный тип токена");
       }
-      const payload = await jwt.verify(token, 10);
+      const payload = await jwt.verify(token, process.env.SECRET_KEY);
       const cart = await Cart.create({
         user: payload.id,
         room,
