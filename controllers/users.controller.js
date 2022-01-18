@@ -16,6 +16,23 @@ module.exports.usersController = {
       res.json(e.message);
     }
   },
+  postAdmin: async(req,res)=>{
+    try{
+        const hash = await bcrypt.hash()
+            password,
+            Number(process.env.BCRYPT_ROUNDS)
+
+        User.create({
+            login: login,
+            password: hash,
+            firsName: firsName,
+            lastName: lastName,
+            role: role
+        })
+    }catch(e){
+        res.json(e.message)
+    }
+  },
   registerUser: async (rea, res) => {
     try {
       const { login, password, firsName, lastName } = req.body;
