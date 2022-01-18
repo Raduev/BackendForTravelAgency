@@ -33,7 +33,7 @@ module.exports.usersController = {
         res.json(e.message)
     }
   },
-  registerUser: async (rea, res) => {
+  registerUser: async (req, res) => {
     try {
       const { login, password, firsName, lastName } = req.body;
 
