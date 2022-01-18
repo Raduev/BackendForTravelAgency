@@ -53,4 +53,17 @@ module.exports.controllerTur = {
       res.json(e);
     }
   },
+
+  updateImg: async (req, res) => {
+    try {
+      await Tur.findByIdAndUpdate(req.params.id, {
+        img: req.file.path
+      })
+      const tur = await Tur.findById(req.params.id)
+
+      res.status(200).json(tur)
+    } catch (e) {
+      res.json(e)
+    }
+  }
 };
