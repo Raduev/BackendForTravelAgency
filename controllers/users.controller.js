@@ -42,7 +42,7 @@ module.exports.usersController = {
         Number(process.env.BCRYPT_ROUNDS)
       );
       const user = await User.create({
-        logni: login,
+        login: login,
         password: hash,
         firstName: firsName,
         lastName: lastName,
