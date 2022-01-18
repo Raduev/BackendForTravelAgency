@@ -12,7 +12,6 @@ module.exports.roomController = {
       try {
        await  Room.create({
          numberOfRooms: req.body.numberOfRooms,
-         hotelRoom: req.body.hotelRoom
        })
         res.json('Комната создана')
       } catch (e) {
@@ -31,7 +30,6 @@ module.exports.roomController = {
       try {
       const patchRoom = await Room.findByIdAndUpdate(req.params.id, {
           numberOfRooms: req.body.numberOfRooms,
-          hotelRoom:req.body.hotelRoom
         })
         res.json(patchRoom)
       } catch (e) {
