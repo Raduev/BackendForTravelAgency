@@ -20,7 +20,7 @@ const hotelSchema = Schema({
       ref: "Comment",
     },
   ],
-  image: {
+  img: {
       type: String
   }
 });

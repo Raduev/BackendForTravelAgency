@@ -16,7 +16,7 @@ module.exports.hotelController = {
         rating: req.body.rating,
         rooms: req.body.rooms,
         comments: req.body.comments,
-        image: req.body.image
+        img: req.body.img
       });
       res.json(hotel);
     } catch (e) {
@@ -40,7 +40,7 @@ module.exports.hotelController = {
           rating: req.body.rating,
           rooms: req.body.rooms,
           comments: req.body.comments,
-          image: req.body.image
+          img: req.body.img
         },
         { new: true }
       );
@@ -49,4 +49,16 @@ module.exports.hotelController = {
       res.json(e.message);
     }
   },
+
+  updateImg: async (req, res) => {
+      try {
+          await Hotel.findByIdAndUpdate(req.params.id, {
+              img: req.file.path
+          })
+          const hotels = await Hotel.findById(req.params.id)
+          res.status(200).json(hotels)
+      } catch (e) {
+          res.json(e)
+      }
+  }
 };
