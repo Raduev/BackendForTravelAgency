@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
 
 const cartSchema = mongoose.Schema({
-  User: {
+  user: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "User",
   },
-  Room: {
+  room: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "Room",
   },
-  Hotel: {
+  hotel: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "Hotel",
   },
-  Tur: {
+  tur: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "Tur",
   },
