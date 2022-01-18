@@ -6,7 +6,7 @@ const router = Router();
 
 router.post("/turs", controllerTur.postTur)
 router.get("/turs", controllerTur.getTurs);
-router.patch("/turs/:id", uploadMiddleware,  controllerTur.patchTur);
+router.patch("/turs/:id", controllerTur.patchTur);
 router.delete("/turs/:id", controllerTur.deleteTur);
 router.patch("/turs/:id/avatar", uploadMiddleware.single("img"), controllerTur.updateImg)
 
