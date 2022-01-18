@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
   }
 
   try {
-    req.user = await jwt.verify(token, process.env.SECRET_JWT_KEY)
+    req.user = await jwt.verify(token, process.env.SECRET_KEY)
 
 
     next();
