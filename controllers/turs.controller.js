@@ -20,7 +20,7 @@ module.exports.controllerTur = {
   },
   getTurs: async (req, res) => {
     try {
-      const tur = await Tur.find();
+      const tur = await Tur.find().populate("hotel")
       res.json(tur);
     } catch (e) {
       res.json(e);
