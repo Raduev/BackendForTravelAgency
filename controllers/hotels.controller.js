@@ -16,6 +16,7 @@ module.exports.hotelController = {
         rating: req.body.rating,
         rooms: req.body.rooms,
         comments: req.body.comments,
+        image: req.body.image
       });
       res.json(hotel);
     } catch (e) {
@@ -39,6 +40,7 @@ module.exports.hotelController = {
           rating: req.body.rating,
           rooms: req.body.rooms,
           comments: req.body.comments,
+          image: req.body.image
         },
         { new: true }
       );

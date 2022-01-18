@@ -20,6 +20,9 @@ const hotelSchema = Schema({
       ref: "Comment",
     },
   ],
+  image: {
+      type: String
+  }
 });
 
 const Hotel = mongoose.model("Hotel", hotelSchema);
