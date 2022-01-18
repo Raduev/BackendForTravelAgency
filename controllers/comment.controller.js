@@ -2,7 +2,7 @@ const Comment = require('../models/Comment.model')
 module.exports.commentController = {
   getComment: async (req, res) => {
     try {
-      const comments =  Comment.find()
+      const comments =  await Comment.find()
       res.json(comments)
     } catch (e) {
       console.log(e)
