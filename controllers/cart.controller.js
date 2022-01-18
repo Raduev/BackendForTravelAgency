@@ -43,7 +43,7 @@ module.exports.cartController = {
     try {
       const { room, tur, hotel } = req.body;
       const { authorization } = req.headers;
-      const { type, token } = authorization.split(" ");
+      const [ type, token ] = authorization.split(" ");
       if (type !== "Bearer") {
         return res.status(400).json("Неверный тип токена");
       }
