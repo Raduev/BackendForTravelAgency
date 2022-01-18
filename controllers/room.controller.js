@@ -12,6 +12,7 @@ module.exports.roomController = {
       try {
        await  Room.create({
          numberOfRooms: req.body.numberOfRooms,
+         img: req.body.img
        })
         res.json('Комната создана')
       } catch (e) {
@@ -30,8 +31,20 @@ module.exports.roomController = {
       try {
       const patchRoom = await Room.findByIdAndUpdate(req.params.id, {
           numberOfRooms: req.body.numberOfRooms,
+          img: req.body.img
         })
         res.json(patchRoom)
+      } catch (e) {
+        console.log(e)
+      }
+  },
+  updateImg: async (req, res) =>{
+      try{
+        await Room.findByIdAndUpdate(req.params.id, {
+          img: req.file.path
+        })
+        const room = await Room.findById(req.params.id)
+        res.status(200).json(room)
       } catch (e) {
         console.log(e)
       }
