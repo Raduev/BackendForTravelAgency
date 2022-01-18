@@ -16,26 +16,26 @@ module.exports.usersController = {
       res.json(e.message);
     }
   },
-  postAdmin: async(req,res)=>{
-    try{
-        const hash = await bcrypt.hash()
-            password,
-            Number(process.env.BCRYPT_ROUNDS)
+  postAdmin: async (req, res) => {
+    try {
+      const { login, password, firsName, lastName, role } = req.body;
+      const hash = await bcrypt.hash();
+      password, Number(process.env.BCRYPT_ROUNDS);
 
-        User.create({
-            login: login,
-            password: hash,
-            firsName: firsName,
-            lastName: lastName,
-            role: role
-        })
-    }catch(e){
-        res.json(e.message)
+      User.create({
+        login: login,
+        password: hash,
+        firsName: firsName,
+        lastName: lastName,
+        role: role,
+      });
+    } catch (e) {
+      res.json(e.message);
     }
   },
   registerUser: async (req, res) => {
     try {
-      const { login, password, firsName, lastName } = req.body;
+      const { login, password, firsName, lastName, role } = req.body;
 
       const hash = await bcrypt.hash(
         password,
@@ -46,6 +46,7 @@ module.exports.usersController = {
         password: hash,
         firstName: firsName,
         lastName: lastName,
+        role: role,
       });
       res.json("Авторизация прошла успешно");
     } catch (e) {
