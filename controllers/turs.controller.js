@@ -1,6 +1,6 @@
 const Tur = require("../models/Tur.model");
 
-module.exports.controllerService = {
+module.exports.controllerTur = {
   postTur: async (req, res) => {
     try {
       const { from, to, data, night, amount, hotel, price } = req.body;
