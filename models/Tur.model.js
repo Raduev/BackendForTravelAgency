@@ -8,6 +8,7 @@ const turSchema = mongoose.Schema({
   amount: { type: Number, required: true },
   hotel: { type: mongoose.SchemaTypes.ObjectId, ref: "Hotel" },
   price: { type: Number, required: true },
+  img: {type: String, required: true}
 });
 
 const Tur = mongoose.model("Tur", turSchema);

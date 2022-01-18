@@ -3,7 +3,7 @@ const Tur = require("../models/Tur.model");
 module.exports.controllerTur = {
   postTur: async (req, res) => {
     try {
-      const { from, to, data, night, amount, hotel, price } = req.body;
+      const { from, to, data, night, amount, hotel, price, img} = req.body;
       const tur = await Tur.create({
         from: from,
         to: to,
@@ -12,6 +12,7 @@ module.exports.controllerTur = {
         amount: amount,
         hotel: hotel,
         price: price,
+        img: img
       });
       res.json(tur);
     } catch (e) {
@@ -36,7 +37,7 @@ module.exports.controllerTur = {
   },
   patchTur: async (req, res) => {
     try {
-      const { from, to, data, night, amount, hotel, price } = req.body;
+      const { from, to, data, night, amount, hotel, price, img } = req.body;
       const tur = await Tur.findByIdAndUpdate(req.params.id, {
         from: from,
         to: to,
@@ -45,6 +46,7 @@ module.exports.controllerTur = {
         amount: amount,
         hotel: hotel,
         price: price,
+        img: img
       });
       res.json(tur);
     } catch (e) {
