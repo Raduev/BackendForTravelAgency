@@ -3,7 +3,7 @@ const Hotel = require("../models/Hotel.model");
 module.exports.hotelController = {
   getHotels: async (req, res) => {
     try {
-      const allHotels = await Hotel.find().populate("Room, Comment");
+      const allHotels = await Hotel.find().populate("rooms comments");
       res.json(allHotels);
     } catch (e) {
       res.json(e.message);
