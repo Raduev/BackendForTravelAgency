@@ -1,22 +1,22 @@
 const mongoose = require("mongoose");
 
 const cartSchema = mongoose.Schema({
-  user: {
+  user: [{
     type: mongoose.SchemaTypes.ObjectId,
     ref: "User",
-  },
-  room: {
+  }],
+  room: [{
     type: mongoose.SchemaTypes.ObjectId,
     ref: "Room",
-  },
-  hotel: {
+  }],
+  hotel: [{
     type: mongoose.SchemaTypes.ObjectId,
     ref: "Hotel",
-  },
-  tur: {
+  }],
+  tur: [{
     type: mongoose.SchemaTypes.ObjectId,
     ref: "Tur",
-  },
+  }],
 });
 
 const Cart = mongoose.model("Cart", cartSchema);
