@@ -48,7 +48,7 @@ module.exports.usersController = {
         lastName: lastName,
         role: role,
       });
-      res.json("Авторизация прошла успешно");
+      res.json("Регистрация прошла успешно");
     } catch (e) {
       res.json(e.message);
     }
