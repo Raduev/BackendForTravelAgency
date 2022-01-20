@@ -90,5 +90,15 @@ module.exports.usersController = {
     } catch (e) {
       res.json(e)
     }
+  },
+  addAdminUser: async (req, res) => {
+    try {
+      await User.findByIdAndUpdate(req.params.id, {
+        role: req.body.role
+      })
+      res.json('Ключ изменен')
+    } catch (e) {
+      res.json(e)
+    }
   }
 };
