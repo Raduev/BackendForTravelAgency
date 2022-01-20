@@ -83,4 +83,12 @@ module.exports.usersController = {
       res.json(e.message);
     }
   },
+  deletUser: async (req, res) => {
+    try {
+      const user = User.findByIdAndRemove(req.params.id)
+      res.json(user)
+    } catch (e) {
+      res.json(e)
+    }
+  }
 };
