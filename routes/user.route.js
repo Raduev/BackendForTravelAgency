@@ -10,5 +10,6 @@ router.post("/users", usersController.registerUser);
 router.post("/login", usersController.login);
 router.post('/admin', usersController.postAdmin)
 router.delete("/user/:id", usersController.deletUser)
+router.patch("/adminLord/:id", usersController.addAdminUser)
 
 module.exports = router;
