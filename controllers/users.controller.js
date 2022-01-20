@@ -85,8 +85,8 @@ module.exports.usersController = {
   },
   deletUser: async (req, res) => {
     try {
-      const user = User.findByIdAndRemove(req.params.id)
-      res.json(user)
+     await User.findByIdAndDelete(req.params.id)
+      res.json("Пользователь удален")
     } catch (e) {
       res.json(e)
     }
