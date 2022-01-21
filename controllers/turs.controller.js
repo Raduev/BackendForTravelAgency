@@ -65,5 +65,13 @@ module.exports.controllerTur = {
     } catch (e) {
       res.json(e)
     }
+  },
+  getByTur: async (req, res) => {
+    try {
+    const tur = await Tur.findById(req.params.id)
+    res.json(tur)
+    } catch (e) {
+      res.json(e)
+    }
   }
 };
