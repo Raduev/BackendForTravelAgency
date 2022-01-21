@@ -5,6 +5,7 @@ const uploadMiddleware = require("../middleware/upload.middlware")
 const router = Router();
 
 router.post("/turs", controllerTur.postTur)
+router.get("/tur/:id", controllerTur.getByTur)
 router.get("/turs", controllerTur.getTurs);
 router.patch("/turs/:id", controllerTur.patchTur);
 router.delete("/turs/:id", controllerTur.deleteTur);
