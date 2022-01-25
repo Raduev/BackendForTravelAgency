@@ -78,7 +78,7 @@ module.exports.usersController = {
       });
 
       res.json({ token: token,
-      id: candidate._id
+      
       });
     } catch (e) {
       res.json(e.message);
