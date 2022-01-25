@@ -74,10 +74,12 @@ module.exports.usersController = {
       };
 
       const token = await jwt.sign(payload, process.env.SECRET_KEY, {
-        expiresIn: "24h",
+        expiresIn: "24d",
       });
 
-      res.json({ token: token });
+      res.json({ token: token,
+      id: candidate._id
+      });
     } catch (e) {
       res.json(e.message);
     }
